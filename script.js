@@ -1,5 +1,6 @@
 var updatedCurrentDay = $("#currentDay").text(moment().format("dddd, MMMM Do"));
 var hoursArray = [];
+var scheduleItemArray = [];
 
 generateHoursArray();
 generateTimeblock();
@@ -47,7 +48,13 @@ function updateTextAreaColor() {
     };
 };
 
+
 $(document).on("click", "button", function() {
-    descriptionText = $(this).parent().find(".description");
-    console.log(descriptionText.val());
+    var scheduleItem = {
+        time: $(this).parent().find(".hour").text(),
+        notes: $(this).parent().find(".description").val()
+    }
+
+    scheduleItemArray.push(scheduleItem);
+    localStorage.setItem('myScheduleForTheDay', JSON.stringify(scheduleItemArray));
 });
