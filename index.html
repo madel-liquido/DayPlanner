@@ -20,98 +20,11 @@
     </header>
     <div class="container">
         <!-- Timeblocks go here -->
-        <div class="row col-sm-12 row1">
-            <div class="col-sm-1 hour" id="nineAM"></div>
-            <textarea class="col-sm-10 description past" id="descriptionText"></textarea>
-            <button class="col-sm-1 saveBtn"><i class="fas fa-save"></i></button>
-        </div>
-
-        <div class="row col-sm-12 row2">
-            <div class="col-sm-1 hour" id="tenAM"></div>
-            <textarea class="col-sm-10 description past" id="descriptionText"></textarea>
-            <button class="col-sm-1 saveBtn"><i class="fas fa-save"></i></button>
-        </div>
-
-        <div class="row col-sm-12 row3">
-            <div class="col-sm-1 hour" id="elevenAM"></div>
-            <textarea class="col-sm-10 description past" id="descriptionText"></textarea>
-            <button class="col-sm-1 saveBtn"><i class="fas fa-save"></i></button>
-        </div>
-
-        <div class="row col-sm-12 row4">
-            <div class="col-sm-1 hour" id="twelvePM"></div>
-            <textarea class="col-sm-10 description past" id="descriptionText"></textarea>
-            <button class="col-sm-1 saveBtn"><i class="fas fa-save"></i></button>
-        </div>
-
-        <div class="row col-sm-12 row5">
-            <div class="col-sm-1 hour" id="onePM"></div>
-            <textarea class="col-sm-10 description past" id="descriptionText"></textarea>
-            <button class="col-sm-1 saveBtn"><i class="fas fa-save"></i></button>
-        </div>
-
-        <div class="row col-sm-12 row6">
-            <div class="col-sm-1 hour" id="twoPM"></div>
-            <textarea class="col-sm-10 description past" id="descriptionText"></textarea>
-            <button class="col-sm-1 saveBtn"><i class="fas fa-save"></i></button>
-        </div>
-
-        <div class="row col-sm-12 row7">
-            <div class="col-sm-1 hour" id="threePM"></div>
-            <textarea class="col-sm-10 description past" id="descriptionText"></textarea>
-            <button class="col-sm-1 saveBtn"><i class="fas fa-save"></i></button>
-        </div>
-
-        <div class="row col-sm-12 row8">
-            <div class="col-sm-1 hour" id="fourPM"></div>
-            <textarea class="col-sm-10 description past" id="descriptionText"></textarea>
-            <button class="col-sm-1 saveBtn"><i class="fas fa-save"></i></button>
-        </div>
-
-        <div class="row col-sm-12 row9">
-            <div class="col-sm-1 hour" id="fivePM"></div>
-            <textarea class="col-sm-10 description past" id="descriptionText"></textarea>
-            <button class="col-sm-1 saveBtn"><i class="fas fa-save"></i></button>
-        </div>
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
-    <script type="text/javascript">
-        //gray time block- past event
-        //red time block- current hour
-        //green- hour that has now happened yet
-        //if equals current time then red
-
-        $("#nineAM").text(moment().hour(9).format("h A"));
-        $("#tenAM").text(moment().hour(10).format("h A"));
-        $("#elevenAM").text(moment().hour(11).format("h A"));
-        $("#twelvePM").text(moment().hour(12).format("h A"));
-        $("#onePM").text(moment().hour(13).format("h A"));
-        $("#twoPM").text(moment().hour(14).format("h A"));
-        $("#threePM").text(moment().hour(15).format("h A"));
-        $("#fourPM").text(moment().hour(16).format("h A"));
-        $("#fivePM").text(moment().hour(17).format("h A"));
-
-        $("#currentDay").text(moment().format("dddd, MMMM Do"));
-        // var description = $("<textarea>");
-        // $(".description").append(description);
-
-        // $(".descripton")
-
-        //week 4 activity 20-23
-        $(document).on("click", "button", function() {
-            //click button and save into local storage
-            descriptionText = $(this).parent().find(".description");
-            console.log(descriptionText.val());
-
-            // Store
-            localStorage.setItem("descriptionArea", descriptionText.val());
-            // Retrieve
-            descriptionText.innerHTML = localStorage.getItem("descriptionArea");
-        });
+    <script src="script.js"></script>
     </script>
 </body>
 
