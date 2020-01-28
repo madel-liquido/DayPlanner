@@ -46,3 +46,8 @@ function updateTextAreaColor() {
         };
     };
 };
+
+$(document).on("click", "button", function() {
+    descriptionText = $(this).parent().find(".description");
+    console.log(descriptionText.val());
+});
