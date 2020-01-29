@@ -5,6 +5,7 @@ var scheduleItemArray = [];
 generateHoursArray();
 generateTimeblock();
 updateTextAreaColor()
+setEvent();
 
 function generateHoursArray() {
     for (var i = 0; i < 9; i++) {
@@ -50,7 +51,9 @@ function updateTextAreaColor() {
 
 
 $(document).on("click", "button", function() {
+
     var scheduleItem = {
+        day: $("#currentDay").text(),
         time: $(this).parent().find(".hour").text(),
         notes: $(this).parent().find(".description").val()
     }
@@ -58,3 +61,9 @@ $(document).on("click", "button", function() {
     scheduleItemArray.push(scheduleItem);
     localStorage.setItem('myScheduleForTheDay', JSON.stringify(scheduleItemArray));
 });
+
+function setEvent() {
+    var scheduleValue = localStorage.getItem('myScheduleForTheDay');
+    console.log(' schedule value ', JSON.parse(scheduleValue))
+    console.log(JSON.parse(scheduleValue)[0].notes);
+}
