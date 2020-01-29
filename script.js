@@ -61,13 +61,11 @@ $(document).on("click", "button", function() {
 
     scheduleItemArray.push(scheduleItem);
     localStorage.setItem('myScheduleForTheDay', JSON.stringify(scheduleItemArray));
-    //console.log($("#description1").val())
 });
 
 function setEvent() {
     var scheduleValue = localStorage.getItem('myScheduleForTheDay');
     console.log(' schedule value ', JSON.parse(scheduleValue))
-        //console.log(JSON.parse(scheduleValue)[0].notes);
 }
 
 function displayLocalStorage() {
