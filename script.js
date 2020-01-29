@@ -71,8 +71,8 @@ function setEvent() {
 }
 
 function displayLocalStorage() {
-    for (var i = 0; i < hoursArray.length; i++) {
-        localStorage.setItem('content' + i, $("description" + i).val());
-        $("description" + i).val(localStorage.getItem('content' + i));
-    }
+    var scheduleValue = localStorage.getItem('myScheduleForTheDay');
+
+    localStorage.setItem('schedule value 0', JSON.stringify(JSON.parse(scheduleValue)[0].notes));
+    $("#description0").val(localStorage.getItem('schedule value 0'));
 }
